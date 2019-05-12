@@ -1,5 +1,6 @@
 import React from 'react';
 import EnterWord from './components/EnterWord/EnterWord';
+import DisplayWord from './components/DisplayWord/DisplayWord';
 
 function App() {
 	return (
@@ -9,6 +10,7 @@ function App() {
 			</header>
 			<div>
 				<EnterWord />
+				<DisplayWord />
 			</div>
 		</div>
 	);
