@@ -8,10 +8,10 @@ This document contains the requirements for a releasable product, as would be ou
 - [x] Word to guess is displayed on screen
   - [x] Letters are displayed as blanks (underscores) until guessed
   - [x] Other characters (e.g. spaces, apostrophes, etc.) are displayed
-- [ ] Letters to guess are displayed on screen
-  - [ ] All letters of the alphabet are displayed as buttons on screen
-  - [ ] Clicking a correct letter disables the button and displays the letter in the word
-  - [ ] Clicking an incorrect letter disables the button and displays incorrect indicator
+- [x] Letters to guess are displayed on screen
+  - [x] All letters of the alphabet are displayed as buttons on screen
+  - [x] Clicking a correct letter disables the button and displays the letter in the word
+  - [x] Clicking an incorrect letter disables the button and displays incorrect indicator
 - [ ] Hangman's gallows is displayed on screen
   - [ ] Empty gallows displayed initially
   - [ ] With each incorrect guess another part of the body is filled in
