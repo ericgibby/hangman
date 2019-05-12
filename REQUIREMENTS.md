@@ -5,9 +5,9 @@ This document contains the requirements for a releasable product, as would be ou
 
 - [x] A person playing the game can enter a word to be guessed
   - [x] Word cannot be seen as it's typed
-- [ ] Word to guess is displayed on screen
-  - [ ] Letters are displayed as blanks (underscores) until guessed
-  - [ ] Other characters (e.g. spaces, apostrophes, etc.) are displayed
+- [x] Word to guess is displayed on screen
+  - [x] Letters are displayed as blanks (underscores) until guessed
+  - [x] Other characters (e.g. spaces, apostrophes, etc.) are displayed
 - [ ] Letters to guess are displayed on screen
   - [ ] All letters of the alphabet are displayed as buttons on screen
   - [ ] Clicking a correct letter disables the button and displays the letter in the word
