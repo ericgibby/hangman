@@ -1,0 +1,13 @@
+@import '../scss/settings';
+
+.EnterWord {
+	button {
+		margin-left: rem-calc(10);
+	}
+
+	@include breakpoint(small down) {
+		button {
+			margin-left: 0;
+		}
+	}
+}
