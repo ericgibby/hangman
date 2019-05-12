@@ -8,6 +8,7 @@ function App() {
 	const [usedLetters, setUsedLetters] = useState([]);
 
 	const handleSubmit = newWord => setWord(newWord);
+	const handleLetterClick = letter => setUsedLetters([...usedLetters, letter]);
 
 	return (
 		<div className="App grid-container">
@@ -17,7 +18,7 @@ function App() {
 			<div>
 				<EnterWord onSubmit={handleSubmit} hidden={!!word} />
 				<DisplayWord word={word} usedLetters={usedLetters} />
-				<SelectLetters />
+				<SelectLetters onLetterClick={handleLetterClick} usedLetters={usedLetters} word={word} />
 			</div>
 		</div>
 	);
