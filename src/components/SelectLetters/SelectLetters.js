@@ -9,18 +9,26 @@ function getLettersFromWord(word = '') {
 }
 
 function SelectLetters(props) {
+	const handleClick = e => {
+		const character = e.target.value;
+		const { onLetterClick } = props;
+		onLetterClick && onLetterClick(character);
+	};
+
 	const letters = getLettersFromWord(props.word);
 	const buttons = ALPHABET.map((letter, index) => {
 		return (
-			<button key={`LetterButton-${index}`} className="button">
+			<button key={`LetterButton-${index}`} className="button" value={letter} onClick={handleClick}>
 				{letter}
 			</button>
 		);
 	});
+
 	return <div className="SelectLetters">{buttons}</div>;
 }
 
 SelectLetters.propTypes = {
+	onLetterClick: PropTypes.func,
 	word: PropTypes.string
 };
 
