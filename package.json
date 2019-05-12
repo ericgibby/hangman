@@ -10,6 +10,7 @@
 		"format": "prettier --ignore-path \"node_modules/**\" --write \"**/*.{ts,js,json,scss,css,html,md}\""
 	},
 	"dependencies": {
+		"foundation-sites": "^6.5.3",
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6"
 	},
