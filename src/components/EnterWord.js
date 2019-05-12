@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import './EnterWord.scss';
 
@@ -15,7 +16,7 @@ function EnterWord(props) {
 		onSubmit && onSubmit(word);
 	};
 
-	return (
+	return props.hidden ? null : (
 		<div className="EnterWord">
 			<p>Enter a word or phrase to guess.</p>
 			<form onSubmit={handleSubmit}>
@@ -36,5 +37,10 @@ function EnterWord(props) {
 		</div>
 	);
 }
+
+EnterWord.propTypes = {
+	hidden: PropTypes.bool,
+	onSubmit: PropTypes.func
+};
 
 export default EnterWord;
