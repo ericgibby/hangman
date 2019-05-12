@@ -11,6 +11,8 @@ function EnterWord(props) {
 
 	const handleSubmit = e => {
 		e.preventDefault();
+		const { onSubmit } = props;
+		onSubmit && onSubmit(word);
 	};
 
 	return (
