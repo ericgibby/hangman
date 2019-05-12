@@ -1,5 +1,5 @@
 import React from 'react';
-import EnterWord from './components/EnterWord';
+import EnterWord from './components/EnterWord/EnterWord';
 
 function App() {
 	return (
