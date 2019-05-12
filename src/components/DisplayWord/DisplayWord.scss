@@ -1,11 +1,17 @@
 @import '../../scss/settings';
 
 .DisplayWord {
+	font-size: rem-calc(60);
+
 	.letter {
 		display: inline-block;
-		margin: 0 rem-calc(2) 0 0;
+		margin: 0 rem-calc(3) 0 0;
 	}
 	.word {
 		white-space: nowrap;
+	}
+
+	@include breakpoint(small down) {
+		font-size: rem-calc(15);
 	}
 }
