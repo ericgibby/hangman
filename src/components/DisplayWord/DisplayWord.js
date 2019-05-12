@@ -15,13 +15,13 @@ export function getCharacters(word = '', letters = []) {
 }
 
 function DisplayWord(props) {
-	const word = getCharacters(props.word, props.letters);
+	const word = getCharacters(props.word, props.usedLetters);
 
-	return <div className="DisplayWord">{word}</div>;
+	return word ? <div className="DisplayWord">{word}</div> : null;
 }
 
 DisplayWord.propTypes = {
-	letters: PropTypes.arrayOf(PropTypes.string),
+	usedLetters: PropTypes.arrayOf(PropTypes.string),
 	word: PropTypes.string
 };
 
