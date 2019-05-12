@@ -1,0 +1,9 @@
+@import '../../scss/settings';
+
+.SelectLetters {
+	button {
+		margin: rem-calc(5);
+		height: rem-calc(50);
+		width: rem-calc(50);
+	}
+}

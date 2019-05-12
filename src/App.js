@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DisplayWord from './components/DisplayWord/DisplayWord';
 import EnterWord from './components/EnterWord/EnterWord';
+import SelectLetters from './components/SelectLetters/SelectLetters';
 
 function App() {
 	const [word, setWord] = useState('');
@@ -16,6 +17,7 @@ function App() {
 			<div>
 				<EnterWord onSubmit={handleSubmit} hidden={!!word} />
 				<DisplayWord word={word} usedLetters={usedLetters} />
+				<SelectLetters />
 			</div>
 		</div>
 	);
