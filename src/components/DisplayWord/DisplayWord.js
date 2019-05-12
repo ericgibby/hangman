@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import './DisplayWord.scss';
 
 export function getCharacters(word = '', letters = []) {
 	const usedLetters = letters.reduce((obj, letter) => ({ ...obj, [letter]: true }), {});
@@ -16,8 +17,24 @@ export function getCharacters(word = '', letters = []) {
 
 function DisplayWord(props) {
 	const word = getCharacters(props.word, props.usedLetters);
+	const words = word.split(' ');
+	const parts = words
+		.map((part, index) => {
+			const letters = part.split('').map((letter, i) => (
+				<span key={`Letter-${i}`} className="letter">
+					{letter}
+				</span>
+			));
+			return (
+				<span key={`Word-${index}`} className="word">
+					{letters}
+				</span>
+			);
+		})
+		.reduce((arr, part, index) => [...arr, part, <span key={`Space-${index}`}>&nbsp;</span>], [])
+		.slice(0, -1);
 
-	return word ? <div className="DisplayWord">{word}</div> : null;
+	return word ? <div className="DisplayWord">{parts}</div> : null;
 }
 
 DisplayWord.propTypes = {
