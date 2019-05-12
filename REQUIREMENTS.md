@@ -3,8 +3,8 @@
 This application is intended as a simple example of the software development process.
 This document contains the requirements for a releasable product, as would be outlined by product management.
 
-- [ ] A person playing the game can enter a word to be guessed
-  - [ ] Word cannot be seen as it's typed
+- [x] A person playing the game can enter a word to be guessed
+  - [x] Word cannot be seen as it's typed
 - [ ] Word to guess is displayed on screen
   - [ ] Letters are displayed as blanks (underscores) until guessed
   - [ ] Other characters (e.g. spaces, apostrophes, etc.) are displayed
