@@ -8,6 +8,8 @@ import SelectLetters from './components/SelectLetters/SelectLetters';
 
 const NUM_TRIES = 6;
 
+const NUM_TRIES = 6;
+
 function App() {
 	const [word, setWord] = useState('');
 	const [usedLetters, setUsedLetters] = useState({});
