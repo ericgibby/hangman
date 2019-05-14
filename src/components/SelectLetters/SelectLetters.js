@@ -9,15 +9,14 @@ function getLettersMap(letters = []) {
 	return letters.reduce((obj, letter) => ({ ...obj, [letter]: true }), {});
 }
 
-function SelectLetters(props) {
+function SelectLetters({ hidden, onLetterClick, usedLetters, word }) {
 	const handleClick = e => {
 		const character = e.target.value;
-		const { onLetterClick } = props;
 		onLetterClick && onLetterClick(character);
 	};
 
-	const letters = getLettersMap((props.word || '').split(''));
-	const selectedLetters = getLettersMap(props.usedLetters);
+	const letters = getLettersMap((word || '').split(''));
+	const selectedLetters = getLettersMap(usedLetters);
 
 	const buttons = ALPHABET.map((letter, index) => {
 		return (
@@ -35,7 +34,7 @@ function SelectLetters(props) {
 		);
 	});
 
-	return props.hidden ? null : <div className="SelectLetters">{buttons}</div>;
+	return hidden ? null : <div className="SelectLetters">{buttons}</div>;
 }
 
 SelectLetters.propTypes = {
