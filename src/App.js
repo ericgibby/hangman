@@ -9,7 +9,13 @@ function App() {
 	const [word, setWord] = useState('');
 	const [usedLetters, setUsedLetters] = useState({});
 
-	const wordLetters = word.split('').reduce((obj, letter) => ({ ...obj, [letter]: true }), {});
+	const wordLetters = word.split('').reduce((obj, letter) => {
+		const code = letter.charCodeAt();
+		if (code >= 65 && code <= 90) {
+			return { ...obj, [letter]: true };
+		}
+		return obj;
+	}, {});
 	const incorrectCount = Object.keys(usedLetters).reduce((count, letter) => count + (!wordLetters[letter] ? 1 : 0), 0);
 	const complete =
 		incorrectCount === 6 || Object.keys(wordLetters).reduce((used, letter) => used && !!usedLetters[letter], true);
