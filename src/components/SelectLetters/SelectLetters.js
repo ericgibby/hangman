@@ -35,10 +35,11 @@ function SelectLetters(props) {
 		);
 	});
 
-	return <div className="SelectLetters">{buttons}</div>;
+	return props.hidden ? null : <div className="SelectLetters">{buttons}</div>;
 }
 
 SelectLetters.propTypes = {
+	hidden: PropTypes.bool,
 	onLetterClick: PropTypes.func,
 	usedLetters: PropTypes.arrayOf(PropTypes.string),
 	word: PropTypes.string

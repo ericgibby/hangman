@@ -18,7 +18,7 @@ function App() {
 			<div>
 				<EnterWord onSubmit={handleSubmit} hidden={!!word} />
 				<DisplayWord word={word} usedLetters={usedLetters} />
-				<SelectLetters onLetterClick={handleLetterClick} usedLetters={usedLetters} word={word} />
+				<SelectLetters onLetterClick={handleLetterClick} usedLetters={usedLetters} word={word} hidden={!word} />
 			</div>
 		</div>
 	);
