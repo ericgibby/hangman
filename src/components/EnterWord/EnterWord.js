@@ -13,6 +13,7 @@ function EnterWord({ hidden, onSubmit }) {
 	const handleSubmit = e => {
 		e.preventDefault();
 		onSubmit && onSubmit(word);
+		wordChanged('');
 	};
 
 	return hidden ? null : (
