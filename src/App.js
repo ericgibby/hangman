@@ -3,8 +3,11 @@ import './App.scss';
 import DisplayWord from './components/DisplayWord/DisplayWord';
 import EnterWord from './components/EnterWord/EnterWord';
 import Gallows from './components/Gallows/Gallows';
+import GameOver from './components/GameOver/GameOver';
 import SelectLetters from './components/SelectLetters/SelectLetters';
 import GameOver from './components/GameOver/GameOver';
+
+const NUM_TRIES = 6;
 
 const NUM_TRIES = 6;
 
