@@ -21,4 +21,4 @@ This document contains the requirements for a releasable product, as would be ou
     4. right arm
     5. left leg
     6. right leg
-- [ ] Game can be reset at any point during the game
+- [x] Game can be reset at any point during the game
