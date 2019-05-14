@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import './DisplayWord.scss';
 
-export function getCharacters(word = '', letters = []) {
-	const usedLetters = letters.reduce((obj, letter) => ({ ...obj, [letter]: true }), {});
+export function getCharacters(word = '', usedLetters = {}) {
 	const characters = word.split('').map(letter => {
 		// Only mask letters between 65-90 (A-Z)
 		const code = letter.charCodeAt();
@@ -38,7 +37,7 @@ function DisplayWord({ usedLetters, word: wordProp }) {
 }
 
 DisplayWord.propTypes = {
-	usedLetters: PropTypes.arrayOf(PropTypes.string),
+	usedLetters: PropTypes.object,
 	word: PropTypes.string
 };
 

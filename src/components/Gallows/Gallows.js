@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-function Gallows({ usedLetters, word }) {
-	const correctLetters = (word || '').split('').reduce((obj, letter) => ({ ...obj, [letter]: true }), {});
-	const incorrectCount = (usedLetters || []).reduce((count, letter) => count + (!correctLetters[letter] ? 1 : 0), 0);
+function Gallows({ incorrectCount }) {
 	const stage = Math.min(incorrectCount, 6);
 	return (
 		<div className="Gallows">
@@ -13,8 +11,7 @@ function Gallows({ usedLetters, word }) {
 }
 
 Gallows.propTypes = {
-	usedLetters: PropTypes.arrayOf(PropTypes.string),
-	word: PropTypes.string
+	incorrectCount: PropTypes.number
 };
 
 export default Gallows;

@@ -5,30 +5,23 @@ import './SelectLetters.scss';
 
 const ALPHABET = new Array(26).fill('').map((item, index) => String.fromCharCode(65 + index));
 
-function getLettersMap(letters = []) {
-	return letters.reduce((obj, letter) => ({ ...obj, [letter]: true }), {});
-}
-
-function SelectLetters({ hidden, onLetterClick, usedLetters, word }) {
+function SelectLetters({ hidden, onLetterClick, usedLetters, wordLetters }) {
 	const handleClick = e => {
 		const character = e.target.value;
 		onLetterClick && onLetterClick(character);
 	};
-
-	const letters = getLettersMap((word || '').split(''));
-	const selectedLetters = getLettersMap(usedLetters);
 
 	const buttons = ALPHABET.map((letter, index) => {
 		return (
 			<button
 				key={`LetterButton-${index}`}
 				className={classnames('button', {
-					selected: !!selectedLetters[letter],
-					alert: !!selectedLetters[letter] && !letters[letter]
+					selected: !!usedLetters[letter],
+					alert: !!usedLetters[letter] && !wordLetters[letter]
 				})}
 				value={letter}
 				onClick={handleClick}
-				disabled={!!selectedLetters[letter]}>
+				disabled={!!usedLetters[letter]}>
 				{letter}
 			</button>
 		);
@@ -40,8 +33,8 @@ function SelectLetters({ hidden, onLetterClick, usedLetters, word }) {
 SelectLetters.propTypes = {
 	hidden: PropTypes.bool,
 	onLetterClick: PropTypes.func,
-	usedLetters: PropTypes.arrayOf(PropTypes.string),
-	word: PropTypes.string
+	usedLetters: PropTypes.object,
+	wordLetters: PropTypes.object
 };
 
 export default SelectLetters;
