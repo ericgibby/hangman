@@ -10,6 +10,8 @@ function App() {
 
 	const wordLetters = word.split('').reduce((obj, letter) => ({ ...obj, [letter]: true }), {});
 	const incorrectCount = Object.keys(usedLetters).reduce((count, letter) => count + (!wordLetters[letter] ? 1 : 0), 0);
+	const complete =
+		incorrectCount === 6 || Object.keys(wordLetters).reduce((used, letter) => used && !!usedLetters[letter], true);
 
 	const handleSubmit = newWord => setWord(newWord);
 	const handleLetterClick = letter => setUsedLetters({ ...usedLetters, [letter]: true });
@@ -27,6 +29,7 @@ function App() {
 					usedLetters={usedLetters}
 					wordLetters={wordLetters}
 					hidden={!word}
+					disabled={complete}
 				/>
 				<Gallows incorrectCount={incorrectCount} />
 			</div>

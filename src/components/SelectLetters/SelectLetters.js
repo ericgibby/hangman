@@ -5,7 +5,7 @@ import './SelectLetters.scss';
 
 const ALPHABET = new Array(26).fill('').map((item, index) => String.fromCharCode(65 + index));
 
-function SelectLetters({ hidden, onLetterClick, usedLetters, wordLetters }) {
+function SelectLetters({ disabled, hidden, onLetterClick, usedLetters, wordLetters }) {
 	const handleClick = e => {
 		const character = e.target.value;
 		onLetterClick && onLetterClick(character);
@@ -21,7 +21,7 @@ function SelectLetters({ hidden, onLetterClick, usedLetters, wordLetters }) {
 				})}
 				value={letter}
 				onClick={handleClick}
-				disabled={!!usedLetters[letter]}>
+				disabled={disabled || !!usedLetters[letter]}>
 				{letter}
 			</button>
 		);
@@ -31,6 +31,7 @@ function SelectLetters({ hidden, onLetterClick, usedLetters, wordLetters }) {
 }
 
 SelectLetters.propTypes = {
+	disabled: PropTypes.bool,
 	hidden: PropTypes.bool,
 	onLetterClick: PropTypes.func,
 	usedLetters: PropTypes.object,
