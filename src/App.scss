@@ -10,5 +10,10 @@
 	header {
 		background-color: map-get($foundation-palette, primary);
 		color: $white;
+
+		.button.hollow {
+			color: $white;
+			border-color: $white;
+		}
 	}
 }

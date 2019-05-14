@@ -28,6 +28,10 @@ function App() {
 		(incorrectCount === NUM_TRIES ||
 			Object.keys(wordLetters).reduce((used, letter) => used && !!usedLetters[letter], true));
 
+	const handleClickReset = () => {
+		setWord('');
+		setUsedLetters({});
+	};
 	const handleSubmit = newWord => setWord(newWord);
 	const handleLetterClick = letter => setUsedLetters({ ...usedLetters, [letter]: true });
 
@@ -35,9 +39,14 @@ function App() {
 		<div className="App">
 			<header>
 				<div className="grid-container">
-					<ul className="menu">
+					<ul className="menu align-middle">
 						<li className="menu-text">
 							<h1>Hangman</h1>
+						</li>
+						<li>
+							<button className="button hollow" onClick={handleClickReset}>
+								Start Over
+							</button>
 						</li>
 					</ul>
 				</div>
