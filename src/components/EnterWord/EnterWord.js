@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import './EnterWord.scss';
 
-function EnterWord(props) {
+function EnterWord({ hidden, onSubmit }) {
 	const [word, wordChanged] = useState('');
 
 	const handleChange = e => {
@@ -12,11 +12,10 @@ function EnterWord(props) {
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		const { onSubmit } = props;
 		onSubmit && onSubmit(word);
 	};
 
-	return props.hidden ? null : (
+	return hidden ? null : (
 		<div className="EnterWord">
 			<p>Enter a word or phrase to guess.</p>
 			<form onSubmit={handleSubmit}>
