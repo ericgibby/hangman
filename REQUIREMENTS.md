@@ -12,9 +12,9 @@ This document contains the requirements for a releasable product, as would be ou
   - [x] All letters of the alphabet are displayed as buttons on screen
   - [x] Clicking a correct letter disables the button and displays the letter in the word
   - [x] Clicking an incorrect letter disables the button and displays incorrect indicator
-- [ ] Hangman's gallows is displayed on screen
-  - [ ] Empty gallows displayed initially
-  - [ ] With each incorrect guess another part of the body is filled in
+- [x] Hangman's gallows is displayed on screen
+  - [x] Empty gallows displayed initially
+  - [x] With each incorrect guess another part of the body is filled in
     1. head
     2. body
     3. left arm
