@@ -6,4 +6,9 @@
 		padding: rem-calc(20 0);
 		border-bottom: 1px solid $medium-gray;
 	}
+
+	header {
+		background-color: map-get($foundation-palette, primary);
+		color: $white;
+	}
 }

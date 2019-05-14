@@ -32,11 +32,17 @@ function App() {
 	const handleLetterClick = letter => setUsedLetters({ ...usedLetters, [letter]: true });
 
 	return (
-		<div className="App grid-container">
+		<div className="App">
 			<header>
-				<h1>Hangman</h1>
+				<div className="grid-container">
+					<ul className="menu">
+						<li className="menu-text">
+							<h1>Hangman</h1>
+						</li>
+					</ul>
+				</div>
 			</header>
-			<div>
+			<div className=" grid-container">
 				<div className="grid-x top-section">
 					<div className="cell small-12 align-center">
 						<GameOver success={complete && incorrectCount < NUM_TRIES} hidden={!complete} />
