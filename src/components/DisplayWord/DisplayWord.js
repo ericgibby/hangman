@@ -15,8 +15,8 @@ export function getCharacters(word = '', letters = []) {
 	return characters.join('');
 }
 
-function DisplayWord(props) {
-	const word = getCharacters(props.word, props.usedLetters);
+function DisplayWord({ usedLetters, word: wordProp }) {
+	const word = getCharacters(wordProp, usedLetters);
 	const words = word.split(' ');
 	const parts = words
 		.map((part, index) => {
