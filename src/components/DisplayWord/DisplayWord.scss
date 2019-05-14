@@ -2,6 +2,7 @@
 
 .DisplayWord {
 	font-size: rem-calc(60);
+	text-align: center;
 
 	.letter {
 		display: inline-block;
@@ -12,6 +13,6 @@
 	}
 
 	@include breakpoint(small down) {
-		font-size: rem-calc(15);
+		font-size: rem-calc(30);
 	}
 }

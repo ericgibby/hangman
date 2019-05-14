@@ -1,0 +1,9 @@
+@import './scss/settings';
+
+.App {
+	.top-section {
+		margin: rem-calc(20 0);
+		padding: rem-calc(20 0);
+		border-bottom: 1px solid $medium-gray;
+	}
+}
